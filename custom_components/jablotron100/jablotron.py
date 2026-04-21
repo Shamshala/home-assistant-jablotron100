@@ -22,6 +22,7 @@ from homeassistant.helpers.typing import StateType
 from homeassistant.helpers import entity_registry as er
 import math
 import os
+import select
 import sys
 import threading
 import time
@@ -998,6 +999,13 @@ class Jablotron:
 						last_restarted_at_hour = actual_hour
 
 					self._stream_data_updating_event.clear()
+
+					ready = select.select([stream], [], [], 30)
+					if not ready[0]:
+						self._set_unavailable()
+						stream.close()
+						stream = self._open_read_stream()
+						continue
 
 					raw_packet = stream.read(STREAM_PACKET_SIZE)
 
