@@ -2265,7 +2265,7 @@ class Jablotron:
 
 			# Unused section
 			if state_packet == b"\x07\x00":
-				break
+				continue
 
 			section_states[section] = Jablotron._parse_jablotron_section_state(Jablotron._bytes_to_binary(state_packet[:1]) + Jablotron._bytes_to_binary(state_packet[1:]))
 
