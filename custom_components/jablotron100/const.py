@@ -123,7 +123,7 @@ class EntityType(StrEnum):
 	GSM_SIGNAL_STRENGTH = "gsm_signal_strength"
 	LAN_CONNECTION = "lan_connection"
 	LAN_IP = "lan_ip"
-	POWER_SUPPLY = "power_supple"
+	POWER_SUPPLY = "power_supply"
 	PROBLEM = "problem"
 	PULSES = "pulses"
 	PROGRAMMABLE_OUTPUT = "programmable_output"
