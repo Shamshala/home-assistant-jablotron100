@@ -706,7 +706,7 @@
 			"lan_connection": {
 				"name": "LAN connection"
 			},
-			"power_supple": {
+			"power_supply": {
 				"name": "Power supply"
 			},
 			"problem": {
