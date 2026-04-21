@@ -1063,8 +1063,8 @@ class Jablotron:
 		while not self._stream_stop_event.is_set():
 			if not self._stream_data_updating_event.wait(0.5):
 				try:
-					if counter == 0 and not self._is_alarm_active():
-						self._send_packets(self.create_packets_keepalive(self._config[CONF_PASSWORD]))
+					if counter == 0:
+						self._send_packet(self.create_packet_enable_device_states())
 
 						# Check some devices once an hour (and on the start too)
 						actual_time = datetime.datetime.now()
